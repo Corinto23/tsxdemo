@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 interface ListProps<T> {
   items: T[];
   onClick: (value: T) => void;
@@ -13,7 +15,7 @@ export const List = <T extends { id: number }>({
       {items.map((item, index) => {
         return (
           <div key={item.id} onClick={() => onClick(item)}>
-            {item}
+            {JSON.stringify(item)}
           </div>
         );
       })}
